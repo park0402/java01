@@ -64,7 +64,38 @@ public class Day05_도서대여프로그램 { // c s
 				
 				
 				for(int i =0; i<memberlist.length ; i++ ) {
-					if( memberlist[i][0] !=null && memberlist[i][0].equals( id ) &&
+				    
+					if(id.equals("admin")){ 
+						System.out.println("관리자 메뉴입니다");
+						System.out.println("1.도서등록\t2.도서목록\t3.도서삭제\t4.로그아웃"); int 번호1 =sc.nextInt();
+						if(번호1==1) {
+						System.out.println(" 제목 : "); String title = sc.next();
+						System.out.println(" 작가 : "); String content = sc.next();
+						
+						for(int j =0; j<boardlist.length ; j++) {
+							if(boardlist[j][0]==null) { //null 안쓰면 덮어 씌우기 됌 공백찾아야함
+								boardlist[j][0] = title;
+								boardlist[j][1] = content; 
+								
+								System.out.println("알림)) 도서가 추가되었습니다 ");
+								break;
+							}
+						 }
+						}
+							
+						else if(번호1==2) {}
+						else if(번호1==3) {}
+						else if(번호1==4) {}
+						else { System.out.println("잘못된 입력입니다. 초기메뉴로 돌아갑니다");}
+						
+					break;
+						
+						
+						
+						
+					} // admin if d
+					
+					else if( memberlist[i][0] !=null && memberlist[i][0].equals( id ) &&
 							memberlist[i][1].equals(pa) ) {
 					
 					
