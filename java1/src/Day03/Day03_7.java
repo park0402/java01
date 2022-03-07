@@ -2,7 +2,7 @@ package Day03;
 
 import java.util.Scanner;
 
-public class Day03_7 {
+public class Day03_7 { // c s
 	
 	public static void main(String[] args) {
 		
@@ -129,4 +129,4 @@ public class Day03_7 {
 		
 		
 	}
-}
+} // c d
