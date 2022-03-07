@@ -25,6 +25,8 @@ public class Day05_2 { // c s
 			System.out.println("--------------------------------------");
 			System.out.println("-1.회원가입 2.로그인 선택:------------------");
 			int ch = sc.nextInt();
+			
+			
 			if(ch==1) { // if1 s
 				System.out.println("------------회원가입 페이지---------");
 				System.out.println("ID: "); String id = sc.next();
@@ -35,20 +37,34 @@ public class Day05_2 { // c s
 					// 2. 아이디 중복체크
 				//아이디 중복체크
 				
-				
-			for( int i= 0; i<memberlist.length ; i ++) { // if-for s
+			boolean idcheck = true; //중복체크 변수 true이면 저장 false 이면 if 를 만나는순간 못들어가게 막기
+			
+			for( int i = 0 ; i<memberlist.length ; i++ ) {  // 회원목록.length : 배열의 가로길이 => 100
+				if( memberlist[i][0] != null && memberlist[i][0].equals(id) ) { // i번째 id와 동일하면 
+							// ==null : 회원x , !=null : 회원o 
+					System.err.println("알림)) : 중복된 아이디가 존재합니다 ");
+					
+					idcheck = false; //아이디체크후 true이면 저장 false 이면 if 를 만나는순간 못들어가게 막기
+					break; // 중복찾기 for 종료 
+				}
+			}
+						
+	////////////////////저장부분////////////////////////
+			if( idcheck ) {
+				for( int i= 0; i<memberlist.length ; i ++) { // if-for s
 					//i < memberlist.length 행길이 = 100 
-				if(memberlist [1][0] == null) { //i번째행에 id가 없으면 = 빈공간
+					if(memberlist [1][0] == null) { //i번째행에 id가 없으면 = 빈공간
 				
-				memberlist[0][0] = id;
-				memberlist[0][1] = pa;
-				memberlist[0][2] = na;
-				System.out.println("알림))) 회원가입이 완료 되었습니다. ");
-				break; //저장했으면끝
+						memberlist[0][0] = id;
+						memberlist[0][1] = pa;
+						memberlist[0][2] = na;
+						System.out.println("알림))) 회원가입이 완료 되었습니다. ");
+						break; //저장했으면끝
 				
-				} //if-for-if d
+						} //if-for-if d
 				
-			} // if-for d
+					} // if-for d
+				}//if
 				
 				
 			} //if 1 d
@@ -59,18 +75,69 @@ public class Day05_2 { // c s
 				System.out.println("ID: "); String id = sc.next();
 				System.out.println("Password: "); String pa= sc.next();
 				
+				boolean logincheck = false;
 				//배열내 데이터가 입력받은 id와 pass가 동일하면 로그인처리
 				
 				for(int i =0; i<memberlist.length ; i++ ) {
 					if( memberlist[i][0] !=null && memberlist[i][0].equals( id ) &&
-							memberlist[i][1].equals(pa) ) 
-					{ System.out.println("알림 로그인 성공");//null 은 == 는 가능하지만 equals 는 취급할수없다
+							memberlist[i][1].equals(pa) ) {
+					
+					System.out.println("알림 로그인 성공");//null 은 == 는 가능하지만 equals 는 취급할수없다
+					logincheck = true; // 로그인 성공 값 저장 
+	///////////////////////////////////////////////////////////////////////////////////////////////////////				
+					
+					while(true) {// 로그인시 메뉴 무한루프 [ 종료 : 로그아웃 ] 
+					
+					System.out.println("-------------------------------");
+					System.out.println("------방문록----------------------");
+					System.out.println("번호\t작성자\t제목\t내용");
 					
 					
-				}// for if ed
+						//모든 방문록 출력하기
+						for( int j = 0; j<boardlist.length ; j ++) {
+							if(boardlist [j][0] != null) {
+							
+							System.out.printf("%d\t%s\t%s\t%s \n",
+									j,
+									boardlist[j][2],
+									boardlist[j][0],
+									boardlist[j][1]);
+							}
+						}
+					
+						System.out.println("--------1.방문록남기기---2.로그아웃----"); int ch2 =sc.nextInt();
+					
+						if(ch2==1) {
+							System.out.println(" 알림)) 방문록 남기기");
+							System.out.println(" title : "); String title = sc.next();
+							System.out.println(" content : "); String content = sc.next();
+							//배열내 공백찾아서 저장하기
+							for(int j =0; j<boardlist.length ; j++) {
+								if(boardlist[j][0]==null) { //null 안쓰면 덮어 씌우기 됌 공백찾아야함
+									boardlist[j][0] = title;
+									boardlist[j][1] = content; 
+									boardlist[j][2] = id; //로그인시 사용된 id를 대입
+									System.out.println("알림)) 방문록이 작성되었습니다. ");
+									break;
+						
+									}
+							}
+						}
+					
+						else if(ch2==2) {
+							System.out.println(" 알림)) 로그아웃되었습니다. ");
+						
+						}	
+						else { System.err.println(" 알림)) 알수없는 요청입니다. ");
+						}
+						
+						}
+					
+					}// for if ed
 					
 				} // eif -for ed
 				
+				if( logincheck == false ) System.err.println(" 알림)) 회원정보가 없거나 다릅니다.");
 				
 				
 			} // eif d
