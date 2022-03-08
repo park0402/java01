@@ -10,6 +10,8 @@ public class Day05_도서대여프로그램 { // c s
 		//도서 100권[도서명,대여여부(대여가능,대여중),대여인(로그인시아이디)] 저장하는 배열
 		String[][] boardlist = new String[100][3]; // 도서목록당 1행
 		
+		
+		
 		while(true) { //wh s
 			System.out.println("도서 대출 프로그램---------------");
 			System.out.println("----------------------------");
@@ -62,30 +64,56 @@ public class Day05_도서대여프로그램 { // c s
 				
 				boolean logincheck = false;
 				
+				boolean insertbook = false;
 				
 				for(int i =0; i<memberlist.length ; i++ ) {
 				    
-					if(id.equals("admin")){ 
+					if(id.equals("admin")){  //관리자 메뉴로 접근했을경우
 						System.out.println("관리자 메뉴입니다");
 						System.out.println("1.도서등록\t2.도서목록\t3.도서삭제\t4.로그아웃"); int 번호1 =sc.nextInt();
-						if(번호1==1) {
+						
+						insertbook = true; 
+						
+						if(번호1==1) { 
+
 						System.out.println(" 제목 : "); String title = sc.next();
 						System.out.println(" 작가 : "); String content = sc.next();
-						
-						for(int j =0; j<boardlist.length ; j++) {
-							if(boardlist[j][0]==null) { //null 안쓰면 덮어 씌우기 됌 공백찾아야함
-								boardlist[j][0] = title;
-								boardlist[j][1] = content; 
+
+							 
 								
-								System.out.println("알림)) 도서가 추가되었습니다 ");
-								break;
-							}
-						 }
-						}
+								
 							
-						else if(번호1==2) {}
-						else if(번호1==3) {}
-						else if(번호1==4) {}
+				
+									
+								System.out.println("-------------------------------");
+								System.out.println("------도서목록----------------------");
+								System.out.println("번호\t담당자\t제목\t작가");
+								
+							 
+							
+						
+					
+					
+						}	//if ed
+					
+				
+				
+							
+						else if(번호1==2) {
+							
+
+							for( int j = 0; j<boardlist.length ; j ++) {
+							if(boardlist [j][0] != null) {
+							
+							System.out.printf("%d\t%s\t%s\t%s \n",
+									j,
+									boardlist[j][2],
+									boardlist[j][0],
+									boardlist[j][1]);
+							}
+						}}
+						else if(번호1==3) {System.out.println(" 알림)) 도서를 삭제합니다.");}
+						else if(번호1==4) { System.out.println(" 알림)) 로그아웃되었습니다. ");}
 						else { System.out.println("잘못된 입력입니다. 초기메뉴로 돌아갑니다");}
 						
 					break;
