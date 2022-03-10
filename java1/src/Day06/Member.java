@@ -10,7 +10,7 @@ public class Member {
 	String phone;
 	String id ; //선언만 했기때문에 초기값은 null 할당
 //  2. 생성자
-	
+		//만일 생성자가 1개도 없으면 기본생성자 자동생성 
 	
 //	3. 메소드
 	

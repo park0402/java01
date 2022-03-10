@@ -145,7 +145,7 @@ public class Day06_3 {
 				}
 				
 			}
-			
+			else { System.err.println(" 알림)) 알수없는 번호입니다."); } // 그외
 			
 			
 		}
