@@ -4,6 +4,8 @@ package Day08_모바일뱅크;
 
 import java.util.Scanner;
 
+
+
 public class BankApplication {
 	
 
@@ -27,7 +29,7 @@ public class BankApplication {
 			int ch = scanner.nextInt();
 			Member member = new Member();
 			if( ch == 1 ) {
-				member.회원가입();// 회원가입 메소드 호출 
+				// 회원가입 메소드 호출 
 				boolean result = member.회원가입();
 				
 				if(result) System.out.println("알림) 회원가입 상공"); 
@@ -62,14 +64,16 @@ public class BankApplication {
 	void membermenu( String loginid  ) { // 인수 변수명은 달라도 되지만 자료형 동일 
 		while(true) {
 			System.out.println(" --------------- 회원 메뉴 ------------------");
-			System.out.print("1.계좌생성 2.입금 3.출금 4.계좌이체 5.로그아웃 선택 : ");
+			System.out.print("1.계좌생성 2.입금 3.출금 4.계좌이체 5.대출신청 6.로그아웃 선택 : ");
 			int ch = scanner.nextInt();
 			Bank Bank = new Bank(); // 빈생성자로 객체 => 메소드 호출용
+			Loan Loan = new Loan();
 			if( ch == 1 ) 		{ Bank.계좌생성(); }
 			else if( ch ==2 ) 	{ Bank.입금(); }
 			else if( ch == 3 ) 	{ Bank.출금(); }
 			else if( ch == 4 ) 	{ Bank.계좌이체(); }
-			else if( ch == 5 ) 	{ return; } // 일반회원메뉴 메소드 종료 [ 로그아웃 ] 
+			else if( ch == 5 ) 	{ Loan.대출신청(); } // 일반회원메뉴 메소드 종료 [ 로그아웃 ] 
+			else if( ch == 6 ) 	{ return; } // 일반회원메뉴 메소드 종료 [ 로그아웃 ] 
 			else { System.err.println(" 알림]] 알수 없는 번호입니다. "); }
 		}
 	} // 일반회원 메뉴 종료 
@@ -77,13 +81,11 @@ public class BankApplication {
 	void adminmenu() {
 		while(true) {
 			System.out.println(" --------------- 관리자 메뉴 ------------------");
-			System.out.print("1.대출상품등록 2.대출상품삭제 3. 대출자 목록4 . 로그아웃 선택 : ");
+			System.out.print("1.대출상품등록 2.로그아웃 선택 : ");
 			int ch = scanner.nextInt();
-				Loan Bank = new Loan();
-			if( ch == 1 ) 		{ }
-			else if( ch == 2 ) 	{ }
-			else if( ch == 3 ) 	{ }
-			else if( ch == 4 ) 	{ }		// 관리자메뉴 메소드 종료 
+				Loan Loan = new Loan();
+			if( ch == 1 ) 		{ Loan.대출상품등록(); }
+			else if( ch == 2 ) 	{ return;}		// 관리자메뉴 메소드 종료 
 			else { System.err.println(" 알림]] 알수 없는 번호입니다. "); }
 		}
 	}

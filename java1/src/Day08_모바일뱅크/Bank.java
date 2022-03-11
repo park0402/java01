@@ -4,6 +4,12 @@ public class Bank {
 	// 1. 필드
 	String 입금액;
 	String 계좌번호;
+	String 입금;
+	String 출금;
+	String 이체;
+	String 계좌목록;
+	
+	
 	
 	
 	
