@@ -7,9 +7,9 @@ public class Day03_3 { //cs
 		
 			Scanner sc = new Scanner(System.in);
 		
-		System.out.println(" 아이디와 비밀번호를 입력하시오 ");
+			System.out.println(" 아이디와 비밀번호를 입력하시오 ");
 		
-		System.out.println( "아이디 : "); String 아이디 =  sc.next();
+			System.out.println( "아이디 : "); String 아이디 =  sc.next();
 		
 			//1. String 클래스 사용하면 문자열 저장가능
 			//2. char 배열/리스트 사용하면 가능
@@ -41,7 +41,7 @@ public class Day03_3 { //cs
 		
 
 		
-		
+ 
 	
 } // m d
 } //cd

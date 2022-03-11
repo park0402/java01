@@ -2,7 +2,7 @@ package Day01;
 
 import java.util.Scanner;
 
-public class 문제1 { // c s
+public class  Day01_5{ // c s
 	public static void main(String[] args) { // m s
 		
 		Scanner 입력객체 = new Scanner(System.in);
