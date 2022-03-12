@@ -2,6 +2,7 @@ package Day08_¸ğ¹ÙÀÏ¹ğÅ©;
 
 
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -13,6 +14,8 @@ public class BankApplication {
 	static Scanner scanner = new Scanner(System.in);
 	static Member[] members = new Member[1000];
 	static Bank[] Bank = new Bank[1000];
+	public static ArrayList<Bank>°èÁÂ¸ñ·Ï = new ArrayList<>();
+	
 	
 	
 	public static void main(String[] args) { // main s
