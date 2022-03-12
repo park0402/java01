@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 
 
-public class BankApplication {
+public class BankApplication {  
 	
 
 	

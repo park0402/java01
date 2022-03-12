@@ -7,7 +7,7 @@ public class Bank {
 	private int	잔액; // 잔액
 	private int  비번; //비밀번호
 
-	
+	      
 	//2. 생성자
 	
 	public Bank() {}
