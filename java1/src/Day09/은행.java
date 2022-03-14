@@ -51,11 +51,11 @@ public class 은행 {
 		this.계좌주 = 계좌주;
 	}
 
-	public String get예금액() {
+	public int get예금액() {
 		return 예금액;
 	}
 
-	public void set예금액(String 예금액) {
+	public void set예금액(int 예금액) {
 		this.예금액 = 예금액;
 	}
 
