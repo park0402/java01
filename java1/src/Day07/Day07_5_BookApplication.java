@@ -2,7 +2,7 @@ package Day07;
 
 import java.util.Scanner;
 
-public class BookApplication {
+public class Day07_5_BookApplication {
 	
 	// BookApplication 클래스 : 입출력 관련코드
 	// Book 클래스 : 도서 관련 코드 
@@ -41,7 +41,7 @@ public class BookApplication {
 				// main 메소드 static 메소드 이기때문에 static 메소드만 내부호출 가능
 			// 2. 외부호출
 				// 1. 객체 생성(메모리할당) -> 메소드 호출 
-				BookApplication application = new BookApplication();
+				Day07_5_BookApplication application = new Day07_5_BookApplication();
 				application.menu();
 				
 	} // main end  
@@ -77,19 +77,37 @@ public class BookApplication {
 	} // menu end 
 	
 	// 2. 일반회원 메뉴 메소드
-	void membermeuu() {
-		
-	}
+	void membermenu( String loginid ) { // 인수 변수명은 달라도 되지만 자료형 동일 
+		while(true) {
+			System.out.println(" --------------- 회원 메뉴 ------------------");
+			System.out.print("1.도서검색 2.도서목록 3.도서대여 4.도서반납 5.로그아웃 선택 : ");
+			int ch = scanner.nextInt();
+				Book book = new Book(); // 빈생성자로 객체 => 메소드 호출용
+			if( ch == 1 ) 		{ book.도서검색(); }
+			else if( ch ==2 ) 	{ book.도서목록(); }
+			else if( ch == 3 ) 	{ book.도서대여( loginid ); }
+			else if( ch == 4 ) 	{ book.도서반납( loginid ); }
+			else if( ch == 5 ) 	{ return; } // 일반회원메뉴 메소드 종료 [ 로그아웃 ] 
+			else { System.err.println(" 알림]] 알수 없는 번호입니다. "); }
+		}
+	} // 일반회원 메뉴 종료 
 	// 3. 관리자 메뉴 메소드 
 	void adminmenu() {
-		
+		while(true) {
+			System.out.println(" --------------- 관리자 메뉴 ------------------");
+			System.out.print("1.도서등록 2.도서목록 3.도서삭제 4.로그아웃 선택 : ");
+			int ch = scanner.nextInt();
+				Book book = new Book();
+			if( ch == 1 ) 		{ book.도서등록(); }
+			else if( ch == 2 ) 	{ book.도서목록(); }
+			else if( ch == 3 ) 	{ book.도서삭제(); }
+			else if( ch == 4 ) 	{ return; }		// 관리자메뉴 메소드 종료 
+			else { System.err.println(" 알림]] 알수 없는 번호입니다. "); }
+		}
 	}
 	
 	
 } // class end 
-
-
-
 
 
 

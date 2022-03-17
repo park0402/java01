@@ -26,14 +26,14 @@ public class Member {
 // 회원가입 
 	boolean 회원가입() {   
 		System.out.println( " 회원 가입 페이지 입니다. ");
-		System.out.println("아이디: "); String id  = BookApplication.scanner.next();
-		System.out.println("비밀번호: "); String password = BookApplication.scanner.next();
-		System.out.println("이름: "); String name = BookApplication.scanner.next();
-		System.out.println("연락처: "); String phone = BookApplication.scanner.next();
+		System.out.println("아이디: "); String id  = Day07_5_BookApplication.scanner.next();
+		System.out.println("비밀번호: "); String password = Day07_5_BookApplication.scanner.next();
+		System.out.println("이름: "); String name = Day07_5_BookApplication.scanner.next();
+		System.out.println("연락처: "); String phone = Day07_5_BookApplication.scanner.next();
 		//scanner 객체가 다른 클래스내 static선언되어있는것을 불러오기
 		
 		//*아이디 중복체크
-		for (Member temp : BookApplication.members ) {
+		for (Member temp : Day07_5_BookApplication.members ) {
 			if(temp != null&& temp.id.equals(id)) {
 				//만약에 공백이 아니면서 배열내 id와 입력받은 id와 동일하면 
 				System.out.println("알림)) 현재 사용중인 아이디입니다 .");
@@ -46,7 +46,7 @@ public class Member {
 		
 			int bno = 0;
 			int j = 0 ;
-			for (Member temp : BookApplication.members) {
+			for (Member temp : Day07_5_BookApplication.members) {
 				if(temp == null ) {
 					if( j == 0) {
 						bno =1; break; 
@@ -57,7 +57,7 @@ public class Member {
 				
 				else {
 					
-					bno = BookApplication.members[j-1].mno +1 ;
+					bno = Day07_5_BookApplication.members[j-1].mno +1 ;
 						//null 앞[마지막회원]번호+1
 				
 					break;
@@ -83,9 +83,9 @@ public class Member {
 		Member member = new Member ( bno, id,password, name , phone);
 	
 		int i = 0;
-		for(Member temp : BookApplication.members ) {
+		for(Member temp : Day07_5_BookApplication.members ) {
 			if(temp == null) {//빈공간이면
-				BookApplication.members[i] = member;
+				Day07_5_BookApplication.members[i] = member;
 		System.out.println(" 알림)) 회원님의 회원번호 : " + bno);
 			
 				return true; //회원가입 메소드 종료~~~~[반환 :true]
@@ -107,10 +107,10 @@ public class Member {
 	}
 //	아이디찾기 
 	void 아이디찾기 () {System.out.println( " 아이디 찾기 서비스입니다.");
-	 System.out.println("이름"); String name = BookApplication.scanner.next();
-	 System.out.println("연락처"); String phone = BookApplication.scanner.next();
+	 System.out.println("이름"); String name = Day07_5_BookApplication.scanner.next();
+	 System.out.println("연락처"); String phone = Day07_5_BookApplication.scanner.next();
 	 
-	 for(Member temp : BookApplication.members) {
+	 for(Member temp : Day07_5_BookApplication.members) {
 		 if(temp != null && temp.name.equals(name)&&temp.phone.equals(phone)) {
 			 System.out.println("알림) 회원님의 아이디는 : " + temp.id + "입니다. ");
 			 return;
@@ -123,9 +123,9 @@ public class Member {
 	}
 //	비밀번호찾기
 	void 비밀번호찾기 () { System.out.println(" 비밀번호 찾기 서비스입니다. ");
-		System.out.println("아이디: "); String id = BookApplication.scanner.next();
-		System.out.println("비밀번호: "); String phone = BookApplication.scanner.next();
-		for(Member temp: BookApplication.members ) {
+		System.out.println("아이디: "); String id = Day07_5_BookApplication.scanner.next();
+		System.out.println("비밀번호: "); String phone = Day07_5_BookApplication.scanner.next();
+		for(Member temp: Day07_5_BookApplication.members ) {
 			if(temp != null && temp.name.equals(id)&&temp.phone.equals(phone)) {
 				System.out.println("회원님의 비밀번호는: " + temp.password+ " 입니다 . ");
 				return;
