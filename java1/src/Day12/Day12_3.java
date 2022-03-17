@@ -77,10 +77,12 @@ public class Day12_3 {
 				count = System.in.read(bytes);
 				String oldstr = new String ( bytes,0 ,count-2);
 				System.out.println("새로운 문자 : ");
+				//수정내용 입력받기 
 				count = System.in.read(bytes);
 				String newstr = new String ( bytes,0 ,count-2);
 				
-				도서목록[index].replace(oldstr, newstr);
+				도서목록[index]= 도서목록[index].replace(oldstr, newstr); // 바꾼것을 다시 인덱스에 담아야함 
+				//배열내 도서명= 수정된 도서명 
 				System.out.println("변경되었습니다. ");
 				
 			}
