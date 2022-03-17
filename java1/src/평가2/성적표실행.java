@@ -19,18 +19,20 @@ public class 성적표실행 { // c s
 				System.out.println("---------------------------------------------------");
 				System.out.println("                        성적표                       ");
 				System.out.println("---------------------------------------------------");
+		
 				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s \n","번호","이름","국어","영어","수학","총점","평균","석차");			
 				for (int i= 0; i<stu.length ; i++) {
 					if(stu[i] != null) {
 						System.out.printf("%d\t%s\t%d\t%d\t%d\t%d\t%.2f\t%d\n",
 								stu[i].get번호(),stu[i].get이름(),stu[i].get국어()
 								,stu[i].get영어(),stu[i].get수학(),stu[i].get총점(),stu[i].get평균(),i+1 );
+					}else {
+						break;
 						
-						
-					}break;
+					}
 				} //for end
 				System.out.println("----------------------------");
-				System.out.println("1.학생점수 등록2.학생점수 추가------");
+				System.out.println("1.학생점수 등록2.학생점수 삭제");
 				int ch = sc.nextInt();
 				if(ch==1) { //1. 학생 점수 등록 입력받기
 					System.out.println("학생점수를 등록해주세요.");
@@ -45,33 +47,35 @@ public class 성적표실행 { // c s
 					//3. 객체화
 					학생 점수객체 = new 학생(번호,이름,국어,영어,수학,총점,평균);
 					//4. 객체 저장
-					for(int i =0; i<stu.length;i++) {
-						if(stu[i]==null) {stu[i]=점수객체; 
+					for(int i =0; i<stu.length; i++) {
+						if(stu[i]==null) {
+							stu[i]=점수객체; 
 						break;
+						
 						}
 						
-					} // for2 end
+					}// for2 end
 				}//1.학생점수등록 끝
+//				if(stu[1]!=null) {
+//					for(int i =0 ; i <stu.length; i++) {
+//						
+//						for(int j = i + 1; j <stu.length; i++) {
+//							if(stu[i].get총점()<stu[j].get총점()) {
+//								System.out.println(stu[i].get총점()+ ","+stu[j].get총점());
+//								학생 temp = stu[i]; 
+//								stu[i] = stu[j];
+//							    stu[j] = temp;
+//							} //if-if end	
+//					
+//						} // if-for-for end
+//					} //if-for end
+//					
+//				} //석차 if end				
+
 				
-					if(stu[1]!=null) {
-						for(int i =0 ; i <stu.length; i++) {
-							
-							for(int j = i + 1; j <stu.length; i++) {
-								if(stu[i].get평균()<stu[j].get평균()) {
-									System.out.println(stu[i].get평균()+ " , "+ stu[j].get평균());
-									학생 temp = stu[i]; 
-									stu[i] = stu[j];
-								    stu[j] = temp;
-								} //if-if end	
-						
-							} // if-for-for end
-						} //if-for end
-						
-					} //석차 if end
-				
-				
+
 			else if (ch==2) { //점수삭제
-				System.out.println("학생점수를 삭제합니다");
+				System.out.println("학생점수를 삭제합니다. 학생번호를 입력해주세요.");
 				int 학생점수삭제= sc.nextInt();
 				boolean 삭제 = false;
 				for(int i=0 ;i<stu.length ;i++) {
@@ -93,7 +97,7 @@ public class 성적표실행 { // c s
 			
 			}
 			else {
-				 System.err.println("번호가 틀렸습니다.");
+				 System.err.println("번호를확인해주세요.");
 			}
 						
 				
