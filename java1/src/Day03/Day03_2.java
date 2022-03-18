@@ -66,10 +66,10 @@ public class Day03_2 { //c s
 		System.out.println("입력한 값 오름차순: " + 정수6 + " " + 정수7+ " " + 정수8);
 		
 		// 문제4 : 4개의 정수를 입력받아 오름차순으로 출력 
-				System.out.print("문제4 정수1 : ");	int 정수10 = 입력객체.nextInt();
-				System.out.print("문제4 정수2 : ");	int 정수11 = 입력객체.nextInt();
-				System.out.print("문제4 정수3 : ");	int 정수12 = 입력객체.nextInt();
-				System.out.print("문제4 정수4 : ");	int 정수13 = 입력객체.nextInt();
+				System.out.print("문제4 정수1 : ");	int 정수10 = scanner.nextInt();
+				System.out.print("문제4 정수2 : ");	int 정수11 =	scanner.nextInt();
+				System.out.print("문제4 정수3 : ");	int 정수12 = scanner.nextInt();
+				System.out.print("문제4 정수4 : ");	int 정수13 =	scanner.nextInt();
 				
 				int temp; // 교환시 사용되는 임시변수
 				///////////////////////////////// 크면 뒤로 가기 => 오름차순 ////////////////////	

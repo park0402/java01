@@ -13,7 +13,7 @@ public class Day03_3 { //cs
 		
 			//1. String 클래스 사용하면 문자열 저장가능
 			//2. char 배열/리스트 사용하면 가능
-		System.out.println( "비밀번호 : "); int 비밀번호 = sc.nextInt();
+			System.out.println( "비밀번호 : "); int 비밀번호 = sc.nextInt();
 		
 //		if( id == "redpyg"){" 비밀번호를 입력하시오 ." };
 //			//입력한 id가 admin 이면
@@ -25,7 +25,7 @@ public class Day03_3 { //cs
 		if( 아이디.equals("redpyg")) { // ifs 
 		//입력한 id가 admin 이면
 	
-		if(비밀번호==1234 ) System.out.println(" 로그인에 성공하였습니다. "); }
+			if(비밀번호==1234 ) {System.out.println(" 로그인에 성공하였습니다. "); }
 			// 입력한 pw1234이면}
 		
 		else { System.out.println("로그인 정보가 맞지않습니다. "); 
