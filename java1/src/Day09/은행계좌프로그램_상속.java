@@ -13,7 +13,7 @@ public class 은행계좌프로그램_상속 {
 	// ** main 밖에서 선언하는 이유 
 		//* 모든 클래스에서 사용하기 위해 static 배열로 선언
 		// static변수는 프로그램 시작시 메모리할당 -> 프로그램 종료시 메모리초기화
-	public static 은행[] 계좌리스트 = new 은행[100]; 
+	public static 은행[] 계좌리스트 = new 은행[4]; 
 	
 	public static void main(String[] args) {
 		

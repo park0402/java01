@@ -43,6 +43,7 @@ public class 주차타워 {
 			
 			} else if(ch==2) {
 				System.out.println("차량 출차 메뉴 ");
+				//출차시 입차했던 차량 번호, 출고시간입력 ,011309
 			}else {
 				System.out.println("잘못된 숫자입력입니다."); 
 			}
