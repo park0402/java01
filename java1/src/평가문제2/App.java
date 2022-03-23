@@ -26,15 +26,15 @@ public class App {
 				+temp.get입차시간().getMinute()+"\t");
 				
 				if(temp.get출차시간() ==null) {
-					System.out.print("주차 중"+"\t");
+					System.out.print("주차 중"+"\t");  
 				}else {
 					System.out.print(temp.get출차시간().getHour()+":"
-				+temp.get출차시간().getMinute()+"\t");
+				+temp.get출차시간().getMinute()+"\t");  
 				}
 				
 				if(temp.get출차시간()==null) {
 					System.out.print("정산 전"+"\t");
-				}else {System.out.println(temp.get금액());
+				}else {System.out.println(temp.get금액()); 
 				
 			}	
 			
