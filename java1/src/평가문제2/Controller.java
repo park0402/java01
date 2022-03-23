@@ -55,7 +55,7 @@ public class Controller {
 			
 			}else {System.out.println("잘못된 입력입니다.");} //2-2. 없으면 오류
 		}
-		// 2.리스트에 동일한 차량 있는지 가져오기
+		
 		
 
 		return true; //출차성공
