@@ -59,10 +59,10 @@ public class Day19_1 {
 			System.out.println("\t"+element);
 		}
 		
-		
+		             
 		//5. set객체명.remove( 객체명) : set객체내 해당 객체를 삭제
 		set.remove("JDBC"); System.out.println("확인 : "   +set);
-		//6. set객체명.clear(): set 객체내 모든 객체를 비우기 [삭제]
+		//6. set객체명.clear(): set 객체내 모든 객체를 비우기 [삭제]  
 		set.clear(); System.out.println("확인: " + set );
 		
 	
