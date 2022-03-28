@@ -3,6 +3,7 @@ package Day19;
 import java.util.HashSet;
 import java.util.Iterator;
 
+
 public class Day19_1 {
 	public static void main(String[] args) {
 		// 컬렉션(수집=저장)프레임워크(미리만들어진클래스)
@@ -61,12 +62,13 @@ public class Day19_1 {
 		
 		             
 		//5. set객체명.remove( 객체명) : set객체내 해당 객체를 삭제
-		set.remove("JDBC"); System.out.println("확인 : "   +set);
+//		set.remove("JDBC"); System.out.println("확인 : "   +set);
 		//6. set객체명.clear(): set 객체내 모든 객체를 비우기 [삭제]  
 		set.clear(); System.out.println("확인: " + set );
 		
 	
-	
+
+			
 	
 	
 	
