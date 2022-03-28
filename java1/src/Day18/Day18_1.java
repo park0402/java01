@@ -71,7 +71,7 @@ public class Day18_1 {
 		for( String str : list ) {
 			System.out.println( i+":"+str);
 			i++;
-		}
+		}            
 		
 		// 6. 리스트객체명.remove(인덱스/객체)
 			System.out.println(" 삭제 전 확인 : " + list );
