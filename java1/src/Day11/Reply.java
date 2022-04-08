@@ -1,0 +1,34 @@
+package Day11;
+
+public class Reply {
+	//1. 필드
+	private String content;
+	private String password;
+	private String writer;
+	private String date;
+	
+	//2. 생성자
+		//1. 빈생성자
+	public Reply() {}
+		//2. 풀생성자
+	public Reply(String content, String password, String writer, String date) {
+		super();
+		this.content = content;
+		this.password = password;
+		this.writer = writer;
+		this.date = date;
+	}
+		//3.댓글등록시 사용되는 생성자
+
+	public Reply(String content, String password, String writer) {
+		super();
+		this.content = content;
+		this.password = password;
+		this.writer = writer;
+	}
+	
+	
+	
+	//3. 메소드
+
+}
