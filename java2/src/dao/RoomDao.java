@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Observable;
 
 import dto.Room;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class RoomDao {
 	
@@ -42,12 +45,31 @@ public class RoomDao {
 		try {				// max( 필드명 ) : 해당 필드의 가장 큰 값 
 			String sql ="select max(ronum) from room";
 			ps = con.prepareStatement(sql);
-			rs = ps.executeQuery();
+			rs = ps.executeQuery();//select -> executeQuery // insert,update,delete
 			if( rs.next() ) {
 				return rs.getInt(1); // 최근에 등록된 방번호 반환
 			}
 		}catch(Exception e ) { System.out.println( "[SQL 오류]"+e  ); }
 		return 0;
+	}
+	
+	//3. 모든 방 호출 메소드 [tableview -> observableList ] 
+	public ObservableList<Room> roomlist (){
+		ObservableList<Room> roomlist = FXCollections.observableArrayList();
+		try {
+			String sql = "select* from room order by ronum desc";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();//select -> executeQuery // insert,update,delete
+			while( rs.next() ) {
+				Room room = new Room(rs.getInt(1),
+						rs.getString(2),
+						rs.getString(3),
+						0);
+				roomlist.add(room);
+			}
+			return roomlist;
+		} catch (Exception e) {}
+		return null;
 	}
 }
 

@@ -10,6 +10,7 @@ import controller.login.Login;
 import dao.RoomDao;
 import dto.Room;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,9 +18,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class Chatting implements Initializable {
 
@@ -53,6 +56,18 @@ public class Chatting implements Initializable {
     // 서버소켓 생성  [ 모든 메소드에서 사용 ] 
     public Server server ; 
     
+    public void show() {
+    	ObservableList<Room> roomlist =
+    			RoomDao.roomDao.roomlist();
+    	TableColumn tc = roomtable.getColumns().get(0);
+    	tc.setCellValueFactory(new PropertyValueFactory<>("ronum"));
+    	
+    	tc = roomtable.getColumns().get(1);
+    	tc.setCellValueFactory(new PropertyValueFactory<>("roname"));
+    	
+    	tc = roomtable.getColumns().get(2);
+    	tc.setCellValueFactory(new PropertyValueFactory<>("mcount"));
+    }
     @FXML
     void add(ActionEvent event) { // 방 개설 버튼을 눌렀을때
     	// 1. 컨트롤에 입력된 방 이름 가져오기
@@ -81,6 +96,7 @@ public class Chatting implements Initializable {
     		alert.setHeaderText("방 개설이 되었습니다 방번호 : "
     						+ RoomDao.roomDao.getroomnum());
     		alert.showAndWait();
+    		show();
     		
     }
 
@@ -178,6 +194,7 @@ public class Chatting implements Initializable {
     	btnsend.setDisable(true); 		// 전송버튼 사용금지
     	btnconnect.setDisable(true); 	// 입장버튼 사용금지
     	txtmidlist.setDisable(true);  	// 방접속회원 목록 사용금지 
+    	show();
     }
 	
 }
